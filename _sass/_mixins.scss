@@ -1,34 +1,53 @@
-@mixin flex-direction($values) {
-	-webkit-flex-direction: $values;
-	flex-direction: $values;
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+
+%tab-focus {
+  /* Default*/
+  outline: thin dotted $warning-color;
+  /* Webkit*/
+  outline: 5px auto $warning-color;
+  outline-offset: -2px;
 }
 
-@mixin flex-flow($values) {
-	-webkit-flex-flow: $values;
-	flex-flow: $values;
+/*
+   em function
+   ========================================================================== */
+
+@function em($target, $context: $doc-font-size) {
+  @return ($target / $context) * 1em;
 }
 
-@mixin align-items($values) {
-	-webkit-align-items: $values;
-	align-items: $values;
-}
 
-@mixin justify-content($values) {
-	-webkit-justify-content: $values;
-	justify-content: $values;
-}
+/*
+   Bourbon clearfix
+   ========================================================================== */
 
-@mixin flex($values) {
-	-webkit-flex: $values;
-	flex: $values;
-}
+/*
+  * Provides an easy way to include a clearfix for containing floats.
+  * link http://cssmojo.com/latest_new_clearfix_so_far/
+  *
+  * example scss - Usage
+  *
+  * .element {
+  *   @include clearfix;
+  * }
+  *
+  * example css - CSS Output
+  *
+  * .element::after {
+  *   clear: both;
+  *   content: "";
+  *   display: table;
+  * }
+*/
 
-@mixin display-flex() {
-	display: -webkit-flex;
-	display: flex;
-}
+@mixin clearfix {
+  clear: both;
 
-@mixin display-inline-flex() {
-	display: -webkit-inline-flex;
-	display: inline-flex;
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 }

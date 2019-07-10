@@ -1,21 +1,38 @@
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
 table {
-	width: 100%;
-	margin-bottom: 1.75em;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: $global-font-family;
+  font-size: $type-size-6;
+  border-collapse: collapse;
+  border: 1px solid $light-gray;
+
+  & + table {
+    margin-top: 1em;
+  }
 }
 
-tr {
-	border-bottom: 1px solid #EEE;
-}
-
-tr:nth-child(even) {
-	background: #fcfcfc;
-}
-
-td, th {
-	padding: 8px;
-	text-align: left;
+thead {
+  background-color: $lighter-gray;
+  border-bottom: 1px solid $light-gray;
 }
 
 th {
-	padding-bottom: 4px;
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: left;
+  border-right: 1px solid $light-gray;
+}
+
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+}
+
+tr, td, th {
+  vertical-align: middle;
 }
